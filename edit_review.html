@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Review</title>
+</head>
+<body>
+    <h1>Edit Review</h1>
+    <form method="post">
+        <label for="book_title">Book Title:</label>
+        <input type="text" name="book_title" id="book_title" value="{{ review.book_title }}" required>
+        <label for="review_text">Review Text:</label>
+        <textarea name="review_text" id="review_text" required>{{ review.review_text }}</textarea>
+        <label for="rating">Rating:</label>
+        <input type="number" name="rating" id="rating" value="{{ review.rating }}" required>
+        <button type="submit">Update Review</button>
+    </form>
+    <a href="/all-reviews"><button>Back to Reviews</button></a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Report</title>
+</head>
+<body>
+    <h1>Generate Report</h1>
+    <form action="/generate-report" method="post">
+        <label for="book_title">Select Book Title:</label>
+        <select name="book_title" id="book_title">
+            <option value="All">All Books</option>
+            {% for book in book_titles %}
+            <option value="{{ book.book_title }}">{{ book.book_title }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="rating">Select Rating:</label>
+        <select name="rating" id="rating">
+            <option value="All">All Ratings</option>
+            {% for rating in ratings %}
+            <option value="{{ rating.rating }}">{{ rating.rating }}</option>
+            {% endfor %}
+        </select><br>
+
+        <button type="submit">Generate Report</button>
+    </form>
+</body>
+</html>
